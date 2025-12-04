@@ -10,17 +10,6 @@
         </div>
     </div>
 
-    @if ($errors->any())
-        <div class="alert alert-danger mt-3">
-            <strong>¡Ups!</strong> Hubo algunos problemas con tu entrada.
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     {{-- El formulario apunta al método store del ProductoController --}}
     <form action="{{ route('productos.store') }}" method="POST" class="mt-4">
         @csrf

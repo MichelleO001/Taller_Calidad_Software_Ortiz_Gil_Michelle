@@ -69,45 +69,47 @@
         <section id="categories" class="mt-5">
             <h2 class="mb-5 text-center text-secondary fw-light border-bottom pb-2">Nuestros Productos Frescos</h2>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card product-card h-100">
-                    <img src="{{ asset('img/dashboard/salmon.jpg') }}" 
-                        class="card-img-top" 
-                        alt="Salmón Fresco de Ejemplo" 
-                        style="height: 180px; object-fit: cover;">
-                    
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-primary">Salmón Fresco</h5>
-                        <hr>
-                        <p class="h4 fw-bold text-success">25.500</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="{{ asset('img/dashboard/salmon.jpg') }}" 
+                            class="card-img-top" 
+                            alt="Salmón Fresco de Ejemplo" 
+                            style="height: 180px; object-fit: cover;">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Salmón Fresco</h5>
+                            <hr>
+                            <p class="h4 fw-bold text-success">25.500</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card product-card h-100">
-                    <img src="{{ asset('img/dashboard/bacalao.jpg') }}" 
-                        class="card-img-top" 
-                        alt="Bacalao" 
-                        style="height: 180px; object-fit: cover;">
-                    
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-primary">Bacalao</h5>
-                        <hr>
-                        <p class="h4 fw-bold text-success">15.000</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="{{ asset('img/dashboard/bacalao.jpg') }}" 
+                            class="card-img-top" 
+                            alt="Bacalao" 
+                            style="height: 180px; object-fit: cover;">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Bacalao</h5>
+                            <hr>
+                            <p class="h4 fw-bold text-success">15.000</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card product-card h-100">
-                    <img src="{{ asset('img/dashboard/trucha.webp') }}" 
-                        class="card-img-top" 
-                        alt="Trucha" 
-                        style="height: 180px; object-fit: cover;">
-                    
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-primary">Trucha Arcoíris</h5>
-                        <hr>
-                        <p class="h4 fw-bold text-success">12.500</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="{{ asset('img/dashboard/trucha.webp') }}" 
+                            class="card-img-top" 
+                            alt="Trucha" 
+                            style="height: 180px; object-fit: cover;">
+                        
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Trucha Arcoíris</h5>
+                            <hr>
+                            <p class="h4 fw-bold text-success">12.500</p>
+                        </div>
                     </div>
                 </div>
             </div>

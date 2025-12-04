@@ -5,6 +5,7 @@
 @section('content')
 <div class="mb-4">
     <h1>Crear Nuevo Tipo de Producto</h1>
+    <a class="btn btn-primary" href="{{ route('tipo_producto.index') }}"> Volver</a>
 </div>
 
 <form action="{{ route('tipo_producto.store') }}" method="POST">

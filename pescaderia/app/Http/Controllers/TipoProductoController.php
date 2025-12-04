@@ -10,11 +10,9 @@ class TipoProductoController extends Controller
     public function index()
     {
         $tipos = TipoProducto::all();
-        // La vista usa la carpeta 'tipo_producto' (snake_case)
         return view('tipo_producto.index', compact('tipos'));
     }
 
-    // 🌟 CORRECCIÓN 2: Asegurar que el método 'create' exista y sea público
     public function create()
     {
         return view('tipo_producto.create');
@@ -26,10 +24,28 @@ class TipoProductoController extends Controller
         
         TipoProducto::create($request->all());
         
-        // 🌟 CORRECCIÓN 1: Ruta en minúsculas
         return redirect()->route('tipo_producto.index')->with('success', 'Tipo creado exitosamente.');
     }
 
-    // ... (El resto de los métodos como edit, update, destroy también deben usar 'tipo_producto.index' para redireccionar)
-    // ...
+    public function edit(TipoProducto $tipo_producto)
+    {
+        return view('tipo_producto.edit', compact('tipo_producto'));
+    }
+
+    public function update(Request $request, TipoProducto $tipo_producto)
+    {
+        $request->validate([
+            'nombre' => 'required|unique:tipo_producto,nombre,' . $tipo_producto->id . '|max:255',
+        ]);
+        
+        $tipo_producto->update($request->all());
+        
+        return redirect()->route('tipo_producto.index')->with('success', 'Tipo de producto actualizado exitosamente.');
+    }
+
+    public function destroy(TipoProducto $tipo_producto)
+    {
+        $tipo_producto->delete();
+        return redirect()->route('tipo_producto.index')->with('success', 'Tipo de Producto eliminado exitosamente.');
+    }
 }

@@ -6,43 +6,72 @@
     <title>Inicio de Sesión</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
         }
-        .login-container {
+        .main-container {
+            height: 100vh;
+        }
+        .image-half {
+            background-image: url('{{ asset("img/login/pescaderia.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .login-half {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa; 
+        }
+        .login-card {
             max-width: 400px;
-            margin-top: 10vh;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             background-color: white;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 login-container">
-                <h2 class="text-center mb-4">Iniciar Sesión</h2>
-                {{-- Apunta a la ruta que procesa el login (método handleLogin en AuthController) --}}
-                <form method="POST" action="{{ route('do.login') }}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </div>
-                    <p class="text-center mt-3 text-muted">Nota: La validación está deshabilitada (simulación).</p>
-                </form>
+    
+    <div class="container-fluid main-container">
+        <div class="row h-100 g-0">
+            
+            {{-- Imagen --}}
+            <div class="col-md-6 image-half">
             </div>
+            
+            {{-- Formulario --}}
+            <div class="col-md-6 login-half">
+                <div class="login-card">
+                    <h2 class="text-center mb-4 text-primary">Iniciar Sesión</h2>
+                    
+                    <form method="POST" action="{{ route('do.login') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
